@@ -1,15 +1,17 @@
+let numero = []
+
 function sortear() {
-    let quantidade = document.getElementById('quantidade').value;
-    let numeroMinimo = document.getElementById('de').value;
-    let numeroMaximo = document.getElementById('ate').value;
-    alert(quantidade);
-    alert(numeroMinimo);
-    alert(numeroMaximo);
+    let quantidade = parseInt(document.getElementById('quantidade').value);
+    let de = parseInt(document.getElementById('de').value);
+    let ate = parseInt(document.getElementById('ate').value);
+
+    for (let i = 0; i < quantidade; i++) {
+        numero.push(gerandoNumero(de, ate));
+    }
+    alert(numero);
 }
 
-function gerarNumAleatorio(de, ate) {
-    return Math.random() * (ate - de) + de;
+function gerandoNumero(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-let numAleatorio = gerarNumAleatorio(numeroMinimo, numeroMaximo);
-console.log(numAleatorio);

@@ -12,4 +12,4 @@ function gerarNumAleatorio(de, ate) {
 }
 
 let numAleatorio = gerarNumAleatorio(numeroMinimo, numeroMaximo);
-alert(numAleatorio);
+console.log(numAleatorio);

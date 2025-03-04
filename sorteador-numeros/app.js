@@ -6,6 +6,16 @@ function sortear() { //funcao para sortear numero
     let de = parseInt(document.getElementById('de').value); //numero inicial
     let ate = parseInt(document.getElementById('ate').value); //numero final
 
+    if (de >= ate) {
+        alert('Campo "Do número" deve ser inferior ao campo "Até o número". Verifique!');
+        return;
+    }
+
+    if (quantidade > (ate - de + 1)) {
+        alert('A quantidade de números a serem sorteados não pode ser maior que o intervalo de números possíveis');
+        return;
+    }
+
     for (let i = 0; i < quantidade; i++) {
         numero = gerandoNumero(de, ate);
 
